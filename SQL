@@ -1,0 +1,19 @@
+#Задание 1
+
+SELECT "courierId",
+COUNT (address)
+FROM "Orders"
+WHERE "inDelivery" = True
+GROUP BY "courierId";
+
+#Задание 2
+
+SELECT "track",
+CASE
+WHEN "finished" = True THEN '2'
+WHEN "cancelled" = True THEN '-1'
+WHEN "inDelivery" = True THEN '1'
+ELSE '0'
+END
+FROM "Orders";
+
