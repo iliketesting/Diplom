@@ -1,10 +1,11 @@
 #Задание 1
 
-SELECT "courierId",
-COUNT (address)
-FROM "Orders"
-WHERE "inDelivery" = True
-GROUP BY "courierId";
+SELECT "Couriers".login,
+COUNT (*)
+FROM "Couriers"
+INNER JOIN "Orders" ON "Couriers".id = "Orders"."courierId"
+WHERE "Orders"."inDelivery" = true
+GROUP BY "Couriers".login;
 
 #Задание 2
 
